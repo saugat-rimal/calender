@@ -105,6 +105,9 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
+
+    background: url('./assets/2023.webp') left bottom no-repeat;
+
 }
 
 .header {
@@ -195,10 +198,12 @@ tbody tr {
     color: var(--color-white);
 
 
-    background-image: url('./assets/calender_blue_bg.webp');
+    background: url('./assets/calender_blue_bg.jpg');
+    background-color: var(--color-blue);
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--color-blue);
+
+
 }
 
 .event_header {
