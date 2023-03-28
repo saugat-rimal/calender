@@ -1,0 +1,337 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* Global Variables */
+
+:root {
+
+    /* primary colors  */
+    --color-blue: #447EFB;
+    --color-pink: #D21FFF;
+    --color-navy: #1F2342;
+    --color-lightOrange: #FFC861;
+
+    /* secondary colors  */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray: #CCCCCC;
+    --color-lightGray: #F5F6F6;
+    --color-description: #A9C3FD;
+
+    /* font family  */
+    --font-inter: 'Inter', sans-serif;
+    --font-oswald: 'Oswald', sans-serif;
+
+}
+
+/* global styles   */
+
+body {
+    font-family: var(--font-inter);
+    font-size: var(--step-0);
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px 0px;
+
+
+}
+
+.left_container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+i {
+    font-size: 42px;
+    color: var(--color-navy);
+}
+
+h2#monthName {
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 64px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: var(--color-blue);
+}
+
+.calender {
+    overflow-x: auto;
+    padding: 0px 20px;
+}
+
+table#calendar {
+    margin-block-start: 30px;
+
+    padding: 0px 0px 14px;
+
+    width: 572px;
+    height: 506px;
+
+    text-align: center;
+}
+
+.holiday {
+    background-color: var(--color-lightOrange);
+}
+
+thead#calendarHead tr {
+    outline: 1px dashed #CCCCCC;
+}
+
+
+tbody tr {
+    outline: 1px dashed #CCCCCC;
+}
+
+.left_container p {
+    padding: 14px 12px;
+
+    width: 68px;
+    height: 62px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .left_container td {
+    background-color: red;
+} */
+
+
+#calendarBody p {
+    margin-block: 12px;
+}
+
+#calendarHead p {
+    margin-block-end: 12px;
+}
+
+.left_container table {
+    border-spacing: 16px 0px;
+}
+
+
+
+/* right section  */
+
+.right--section {
+
+    padding-inline: clamp(30px, calc(100vw - 1200px)/2, 60px);
+    padding-block: 110px;
+    color: var(--color-white);
+
+
+    background-image: url('./assets/calender_blue_bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--color-blue);
+}
+
+.event_header {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+hr.event_line {
+    border: 3px solid var(--color-lightGray);
+    border-radius: 30px;
+    margin-block-end: 30px;
+}
+
+.event_container {
+    display: grid;
+    gap: 42px;
+}
+
+.event_card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.event--day {
+    font-family: var(--font-oswald);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.event--day::after {
+    content: ":";
+}
+
+.event_card--body {
+    /* border-left: 6px solid var(--color-lightGray); */
+    display: flex;
+    align-items: center;
+}
+
+.event_card--body::before {
+    content: "";
+    height: 42px;
+    width: 5px;
+    background: var(--color-lightGray);
+    border-radius: 3.5px;
+    margin-inline-end: 12px;
+}
+
+.event_name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+
+}
+
+.event_description {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: var(--color-description);
+}
+
+.name {
+    color: var(--color-white);
+}
+
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0px 0px;
+    }
+
+    .left_container {
+        padding-block: 30px;
+    }
+
+    .right--section {
+        padding-block: clamp(60px, calc(100vw - 1200px)/2, 110px);
+    }
+}
+
+
+/* events links  */
+td .circle {
+    background-color: var(--color-lightOrange);
+
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+    width: 68px;
+    height: 68px;
+
+}
+
+/* square box  */
+
+td .square {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+td .square::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--color-white);
+    border-radius: 50%;
+    bottom: 5px;
+}
+
+/* dot  */
+
+td .dot {
+    position: relative;
+}
+
+td .dot::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--color-pink);
+    border-radius: 50%;
+    bottom: 5px;
+}
