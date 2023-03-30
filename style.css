@@ -130,6 +130,27 @@ h2#monthName {
     color: var(--color-blue);
 }
 
+/* .filter-date {
+    color: rebeccapurple;
+} */
+
+input[type="date"] {
+    background-color: var(--color-blue);
+    padding: 10px 15px;
+    color: var(--color-white);
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: var(--color-lightGray);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
 .calender {
     overflow-x: auto;
     padding: 0px 20px;
