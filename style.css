@@ -58,6 +58,7 @@ select {
 }
 
 
+
 /* Global Variables */
 
 :root {
@@ -81,6 +82,26 @@ select {
 
 }
 
+/* custom scoll bars */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-lightOrange); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-lightGray); 
+  }
+
+
+
 /* global styles   */
 
 body {
@@ -88,6 +109,7 @@ body {
     font-size: var(--step-0);
     font-weight: 500;
     color: var(--color-black);
+    min-height: 100vh;
 }
 
 main {
@@ -100,7 +122,7 @@ main {
 
 .left_container {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -109,6 +131,19 @@ main {
     background: url('./assets/2023.webp') left bottom no-repeat;
 
 }
+
+  /* Handle */
+  .left_container::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px;
+  }
+
+
+  .header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;}
 
 .header {
     display: flex;
@@ -213,9 +248,12 @@ tbody tr {
 /* right section  */
 
 .right--section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 
     padding-inline: clamp(30px, calc(100vw - 1200px)/2, 60px);
-    padding-block: 110px;
     color: var(--color-white);
 
 
@@ -224,8 +262,9 @@ tbody tr {
     background-repeat: no-repeat;
     background-size: cover;
 
-
 }
+
+
 
 .event_header {
     font-size: 48px;
@@ -236,12 +275,34 @@ hr.event_line {
     border: 3px solid var(--color-lightGray);
     border-radius: 30px;
     margin-block-end: 30px;
+    width: 100%;
 }
 
 .event_container {
     display: grid;
     gap: 42px;
+
+    overflow-y: scroll;
 }
+
+/* scrollbar */
+
+.event_container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  
+  /* Handle */
+  .event_container::-webkit-scrollbar-thumb {
+    background: var(--color-white); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .event_container::-webkit-scrollbar-thumb:hover {
+    background: var(--color-lightGray); 
+  }
+
 
 .event_card {
     display: flex;
@@ -361,3 +422,72 @@ td .dot::after {
     border-radius: 50%;
     bottom: 5px;
 }
+
+
+/* customizing type = month  */
+
+input[type="month"] {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    border-radius: 5px;
+  }
+  
+  input[type="month"]::-webkit-calendar-picker-indicator {
+    color: #555;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  input[type="month"]::-webkit-inner-spin-button {
+    display: none;
+  }
+
+
+/* customizing type = date  */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    color: var(--color-white);
+    border: none;
+    outline: none;
+    background-color: var(--color-lightGray);
+
+  }
+  
+  .dropdown label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .dropdown select {
+    /* appearance: none; */
+    background-color: var(--color-lightGray);
+
+    border: none;
+    outline: none;
+    padding: 10px ;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .dropdown select::-ms-expand {
+    display: none;
+  }
+  
+  .dropdown select option {
+    font-weight: normal;
+  }
+  

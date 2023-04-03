@@ -22,15 +22,31 @@
 <body>
     <main>
         <div class="left_container">
+            <div class="header_container">
+                <div class="header">
+                    <i id="prevBtn" class="fas fa-angle-left prev"></i>
+                    <h2 id="monthName"> MARCH 2023 </h2>
+                    <i id="nextBtn" class="fas fa-angle-right next"></i>
+                </div>
 
-            <div class="header">
-                <i id="prevBtn" class="fas fa-angle-left prev"></i>
-                <h2 id="monthName"> MARCH 2023 </h2>
-                <i id="nextBtn" class="fas fa-angle-right next"></i>
-            </div>
-            <div>
-                <label for="start">Filter date:</label>
-                <input type="date" id="start" name="filter-date">
+
+                <!-- <input type="month" id="start" name="filter-date"> -->
+                <button title="month" class="dropdown">
+                    <select title="select month" id="month-select">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </button>
             </div>
 
             <div class="calender">
@@ -223,6 +239,26 @@
                     </div>
                 </div>
 
+                <div class="event_card ">
+                    <div class="event_card--header">
+                        <h2 class="event--day"> 18 March </h2>
+                    </div>
+                    <div class="event_card--body">
+                        <div>
+                            <h3 class="event_name">Birthday </h3>
+                            <p class="event_description">Happy Birthday <span class="name">Saugat Rimal</span></p>
+                        </div>
+                    </div>
+                    <div class="event_card--body">
+                        <div>
+                            <h3 class="event_name">Work Anniversary </h3>
+                            <p class="event_description">Happy 2nd Work Anniversary <span class="name"> Amir Suwal
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="event_card ">
                     <div class="event_card--header">
                         <h2 class="event--day"> 18 March </h2>
